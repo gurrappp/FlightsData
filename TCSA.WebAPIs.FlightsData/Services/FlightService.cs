@@ -8,7 +8,7 @@ namespace TCSA.WebAPIs.FlightsData.Services
         public List<Flight> GetAllFlights();
         public Flight? GetFlightById(int id);
         public Flight CreateFlight(Flight flight);
-        public Flight UpdateFlight(Flight updatedFlight);
+        public Flight? UpdateFlight(Flight updatedFlight);
         public string? DeleteFlight(int id);
     }
 
@@ -56,7 +56,7 @@ namespace TCSA.WebAPIs.FlightsData.Services
             return flight == null ? null : flight;
         }
 
-        public Flight UpdateFlight(Flight flight)
+        public Flight? UpdateFlight(Flight flight)
         {
             var savedFlight = _dbContext.Flights.Find(flight.Id);
 
